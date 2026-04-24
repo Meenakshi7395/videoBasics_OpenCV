@@ -9,12 +9,16 @@ height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 # WINDOWS -- *'DIVX'
 # MACOS or LINUX -- *'XVID'
 
+# Create a VideoWriter object to save the video to a file
 writer = cv2.VideoWriter('mysupervideo.mp4', cv2.VideoWriter_fourcc(*'DIVX'), 20, (width, height))
 
 # Print the width and height of the video frames
 while True:
     ret, frame = cap.read()
+
+    # Write frame to the video file
     writer.write(frame)
+
     # gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     # Display the resulting frame in grayscale
     #cv2.imshow('frame' , gray)
