@@ -11,10 +11,13 @@ while True:
     ret, frame = cap.read()
     
     # gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    # Display the resulting frame in grayscale
     #cv2.imshow('frame' , gray)
 
+    # Display the resulting frame in colors
     cv2.imshow('frame' , frame)
 
+    # Exit the loop if 'q' is pressed
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 cap.release()
